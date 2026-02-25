@@ -7,12 +7,12 @@
 #   ./run.sh 1000 1.in       # compile and run with 1.in as input
 #   ./run.sh 1000 all        # run against all *.in files, compare with *.out
 
-if [ -z "$1" ]; then
-    echo "Usage: ./run.sh <problem_number> [input_file|all]"
+PROB="${1:-$BOJ}"
+
+if [ -z "$PROB" ]; then
+    echo "Usage: ./run.sh <problem_number> [input_file|all] (or set \$BOJ)"
     exit 1
 fi
-
-PROB="$1"
 DIR="$(dirname "$0")/$PROB"
 SRC="$DIR/main.cpp"
 BIN="$DIR/sol"

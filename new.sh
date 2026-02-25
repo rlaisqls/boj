@@ -2,12 +2,12 @@
 # Create a new problem directory with a template solution file
 # Usage: ./new.sh <problem_number>
 
-if [ -z "$1" ]; then
-    echo "Usage: ./new.sh <problem_number>"
+PROB="${1:-$BOJ}"
+
+if [ -z "$PROB" ]; then
+    echo "Usage: ./new.sh <problem_number> (or set \$BOJ)"
     exit 1
 fi
-
-PROB="$1"
 DIR="$(dirname "$0")/$PROB"
 
 if [ -d "$DIR" ]; then
