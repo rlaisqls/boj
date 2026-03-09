@@ -17,8 +17,8 @@ int solve() {
   for (int len=2;len<=n;len++) {
     for (int i=0;i+len-1<n;i++) {
       int j=i+len-1;
-      int sum=sum[j+1]-sum[i];
-      dp[i][j]=max(sum-dp[i+1][j], sum-dp[i][j-1]);
+      int s=sum[j+1]-sum[i];
+      dp[i][j]=max(s-dp[i+1][j], s-dp[i][j-1]);
     }
   }
   return dp[0][n-1];
